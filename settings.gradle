@@ -1,0 +1,2 @@
+include ':app', ':SwipeBackLayout'
+project(':SwipeBackLayout').projectDir = new File('libraries/SwipeBackLayout')
