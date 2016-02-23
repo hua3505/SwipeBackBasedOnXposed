@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SwipeBackBasedInXposed.iml" filepath="$PROJECT_DIR$/SwipeBackBasedInXposed.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SwipeBackBasedOnXposed.iml" filepath="$PROJECT_DIR$/SwipeBackBasedOnXposed.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/SwipeBackLayout/SwipeBackLayout.iml" filepath="$PROJECT_DIR$/libraries/SwipeBackLayout/SwipeBackLayout.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

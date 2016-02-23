@@ -1,4 +1,4 @@
-package com.gmail.huashadow.swipebackbasedinxposed;
+package com.gmail.huashadow.swipebackbasedonxposed;
 
 import org.junit.Test;
 

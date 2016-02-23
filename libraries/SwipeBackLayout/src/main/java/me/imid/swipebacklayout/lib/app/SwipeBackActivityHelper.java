@@ -69,7 +69,7 @@ public class SwipeBackActivityHelper {
 
     protected Context getGlobalContext() {
         try {
-            return mActivity.createPackageContext("com.gmail.huashadow.swipebackbasedinxposed",
+            return mActivity.createPackageContext("com.gmail.huashadow.swipebackbasedonxposed",
                     Context.CONTEXT_IGNORE_SECURITY);
         } catch (Exception e) {
             return mActivity;

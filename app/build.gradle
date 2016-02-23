@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.gmail.huashadow.swipebackbasedinxposed"
+        applicationId "com.gmail.huashadow.swipebackbasedonxposed"
         minSdkVersion 7
         targetSdkVersion 23
         versionCode 1
