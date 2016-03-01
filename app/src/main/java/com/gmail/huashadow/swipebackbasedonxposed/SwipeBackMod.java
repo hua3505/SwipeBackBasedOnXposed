@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
+import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.IXposedHookZygoteInit;
 import de.robv.android.xposed.XC_MethodHook;
 import de.robv.android.xposed.XposedBridge;
@@ -65,13 +67,6 @@ public class SwipeBackMod implements IXposedHookZygoteInit {
 
     private void hookActivityOnCreate() {
         XposedHelpers.findAndHookMethod(Activity.class, "onCreate", Bundle.class, new XC_MethodHook() {
-
-            @Override
-            protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
-                String className = param.thisObject.getClass().getSimpleName();
-                Log.d(TAG, className + " onCreate beforeHookedMethod");
-            }
-
             @Override
             protected void afterHookedMethod(MethodHookParam param) throws Throwable {
                 String className = param.thisObject.getClass().getSimpleName();
@@ -84,23 +79,17 @@ public class SwipeBackMod implements IXposedHookZygoteInit {
                     return;
                 }
 
-                Log.d(TAG, className + " onCreate afterHookedMethod 1");
                 SwipeBackActivityHelper helper = new SwipeBackActivityHelper(activity);
-                Log.d(TAG, className + " onCreate afterHookedMethod 2");
                 try {
                     helper.onActivityCreate();
                 } catch (Exception e) {
                     Log.e(TAG, className + " onCreate afterHookedMethod", e);
                 }
 
-                Log.d(TAG, className + " onCreate afterHookedMethod 3");
                 helper.getSwipeBackLayout().setEnableGesture(true);
                 helper.getSwipeBackLayout().setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
                 helper.getSwipeBackLayout().setSensitivity(activity, 1);
-                Log.d(TAG, className + " onCreate afterHookedMethod 4");
-                Log.d(TAG, className + " onCreate afterHookedMethod 5");
                 setAdditionalInstanceField(activity, "helper", helper);
-                Log.d(TAG, className + " onCreate afterHookedMethod 6");
             }
         });
     }
